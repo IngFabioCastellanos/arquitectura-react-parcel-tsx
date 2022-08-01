@@ -17,3 +17,7 @@ Esta contiene todo el desarrollo del lado del servidor, adicional se coloca el b
 2. ingresa a la carpeta frontend y ejecuta el comamndo: npm i
 3. ingresa a la carpeta server y ejecuta el comamndo: npm i
 4. en la carpeta server cona el proyecto de apps script usando el comando clasp clone "id del proyecto", cabe aclarar que debes haberte logueado previamente.
+
+## Para pasar a producción:
+
+dentro de la carpeta *frontend* ejecutar el comando npm run build y esto genera el archivo listo para pasar a producción que queda en **server/public/index.html**

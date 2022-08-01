@@ -22,7 +22,7 @@ function saveObjectInSheet(props: saveObjectInSheet): object {
     return { status: "failed", message: "Error: No se encontraron los headers de la tabla" };
   }
 
-  const nuevaFila = ordenarArray(JSON.parse(data), headers);
+  const nuevaFila = ordenarArray_(JSON.parse(data), headers);
   table.appendRow(nuevaFila);
 
   return { status: "ok", message: "Registro guardado" }
@@ -30,7 +30,7 @@ function saveObjectInSheet(props: saveObjectInSheet): object {
 
 
 
-function ordenarArray(data: { [x: string]: string }, headers: string[]): string[] {
+function ordenarArray_(data: { [x: string]: string }, headers: string[]): string[] {
   let arregloOrdenado: string[] = [];
 
   for (let posicion = 0; posicion < headers.length; posicion++) {
