@@ -1,4 +1,3 @@
-import 'google-apps-script';
 const doGet = () =>
   HtmlService.createTemplateFromFile("public/index.html")
     .evaluate()
@@ -10,5 +9,5 @@ const doGet = () =>
     )
     .setTitle("Titulo de la aplicación");
 
-const include = (ruta) =>
+const include = (ruta: string) =>
   HtmlService.createHtmlOutputFromFile(ruta).getContent();

@@ -7,7 +7,18 @@ export default function App() {
 
   const listasDesplegables = useListasDesplegables();
 
-  listasDesplegables.get().ciudades.map(e => console.log(e))
+  listasDesplegables.get().ciudades.map(e => console.log(e));
+
+  // try {
+  //   google.script.run
+  //     .withSuccessHandler((e: Array<any>) => console.log(e))
+  //     .obtenerDatos("registro usuarios")
+
+  // } catch (error) {
+  //   console.log(error);
+
+  // }
+
 
 
   return (
