@@ -14,7 +14,7 @@ function findDataById(props: findDataById): string {
     data = sheet.getDataRange().getValues()
   }
   else {
-    return JSON.stringify({ titulo: "Hoja no encontrada" });
+    return JSON.stringify({ satus: "failed", message: "Hoja no encontrada" });
   }
 
   sheet.getDataRange().getValues();
@@ -36,8 +36,12 @@ function findDataById(props: findDataById): string {
 
   // Filtrar si se pasa un id
   if (id) {
-    return JSON.stringify(resultado.find((dato) => dato[nameId] === id));
+    return JSON.stringify({
+      status: "ok",
+      message: "Resultados encontados",
+      data: resultado.find((dato) => dato[nameId] === id)
+    });
   }
 
-  return JSON.stringify(resultado);
+  return JSON.stringify({ status: "ok", message: "Resultados encontados", data: resultado });
 }

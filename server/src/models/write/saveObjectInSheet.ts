@@ -1,7 +1,7 @@
 
 /**
  * saveObjectInSheet
- * @param {string} props
+ * @param {object} props { data: string, nameSheet: string }
  * @returns {object}
  */
 function saveObjectInSheet(props: saveObjectInSheet): object {

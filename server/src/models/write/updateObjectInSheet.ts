@@ -1,9 +1,7 @@
 /**
  * updateObjectInSheet
  *
- * @param {String} id identificador der registro a actualizar
- * @param {String} datos JSON parseado a string con datos a actualizar
- * @param {String} datos JSON parseado a string con datos a actualizar
+ * @param {object} props { id: string, datos: string, nameSheet: string, nameId: string }
  */
 function updateObjectInSheet(props: updateObjectInSheet): object {
 

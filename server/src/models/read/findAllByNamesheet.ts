@@ -10,7 +10,7 @@ function findAllByNamesheet(props: findAllByNamesheet): string {
 
   const sheet = obtenerSheet(nameSheet);
   let data: any[];
-  if (!sheet) return JSON.stringify({ titulo: "No se encontro la sheet" });
+  if (!sheet) return JSON.stringify({ status: "failed", message: "No se encontro la sheet" });
 
   data = sheet.getDataRange().getValues();
 
@@ -30,5 +30,5 @@ function findAllByNamesheet(props: findAllByNamesheet): string {
     return reduced;
   });
 
-  return JSON.stringify(resultado);
+  return JSON.stringify({ status: "ok", message: "Resultados encontados", data: resultado });
 }

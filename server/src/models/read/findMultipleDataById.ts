@@ -1,5 +1,6 @@
 /**
  * findMultipleDataById
+ * @param {Object} props { nameSheet: string, id: string, nameId: string }
  * @return {Object} objeto con la informacion necesaria
  */
 function findMultipleDataById(props: findMultipleDataById): string {
@@ -7,7 +8,7 @@ function findMultipleDataById(props: findMultipleDataById): string {
 
   const sheet = obtenerSheet(nameSheet);
   let data: any[];
-  if (!sheet) return JSON.stringify({ titulo: "No se encontro la sheet" });
+  if (!sheet) return JSON.stringify({ status: "failed", message: "No se encontro la sheet" });
 
   data = sheet.getDataRange().getValues();
 
@@ -26,8 +27,12 @@ function findMultipleDataById(props: findMultipleDataById): string {
 
   // Filtrar si se pasa un id
   if (id) {
-    return JSON.stringify(resultado.filter((dato) => dato[nameId] === id));
+    return JSON.stringify({
+      status: "ok",
+      message: "Resultados encontados",
+      data: resultado.filter((dato) => dato[nameId] === id)
+    });
   }
 
-  return JSON.stringify(resultado);
+  return JSON.stringify({ status: "ok", message: "Resultados encontados", data: resultado });
 }
