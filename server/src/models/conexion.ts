@@ -3,7 +3,7 @@
  * @return {String} retorna la base de datos
  */
 function conexion() {
-  return SpreadsheetApp.openById(env_().ID_DATABASE);
+  return SpreadsheetApp.openById(ID_DATABASE);
 }
 
 /**
