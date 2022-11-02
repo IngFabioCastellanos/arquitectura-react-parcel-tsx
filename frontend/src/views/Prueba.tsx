@@ -4,13 +4,16 @@ import { nameSheets } from '../api/nameSheets'
 
 export default function Prueba() {
 
-  const consultarUsuarios = () => {
-    apiActions
-      .findAllByNamesheet({ nameSheet: nameSheets.USUARIOS })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => console.log(err))
+  const consultarUsuarios = async () => {
+    try {
+      const respuesta = await apiActions
+        .findAllByNamesheet({ nameSheet: nameSheets.USUARIOS });
+
+      console.log(respuesta);
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
