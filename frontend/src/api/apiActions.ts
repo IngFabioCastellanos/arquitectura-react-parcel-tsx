@@ -1,3 +1,9 @@
+import {
+  findAllByNamesheet,
+  findMultipleDataById,
+  saveObjectInSheet,
+  updateObjectInSheet,
+} from "../interfaces/api/interfaceApi";
 import { api } from "./api";
 
 export const apiActions = {
@@ -15,4 +21,4 @@ export const apiActions = {
 
   updateObjectInSheet: async (props: updateObjectInSheet) =>
     await api({ action: "updateObjectInSheet", ...props }),
-}
+};
