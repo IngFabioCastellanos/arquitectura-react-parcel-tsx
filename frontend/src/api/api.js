@@ -5,7 +5,10 @@ export async function api(props) {
         reject(err);
       })
       .withSuccessHandler((res) => {
-        resolve(JSON.parse(res));
+        if (typeof res == "string") {
+          resolve(JSON.parse(res));
+        }
+        resolve(res);
       })
       [props.action](props);
   });
