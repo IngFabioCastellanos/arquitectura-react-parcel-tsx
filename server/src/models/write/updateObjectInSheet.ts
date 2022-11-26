@@ -19,7 +19,7 @@ function updateObjectInSheet(props: updateObjectInSheet): object {
   const datosEncontrados = JSON.parse(findDataById({ nameSheet, id, nameId }));
   const datosObject = JSON.parse(datos);
 
-  const numeroFila = datosEncontrados.row;
+  const numeroFila = datosEncontrados.data.row;
 
   if (!headers) {
     Logger.log("Error: No se encontraron los headers de la tabla");
